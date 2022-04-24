@@ -56,3 +56,30 @@ Checking your code takes time, even more so when the project gets bigger. Someti
 Enters [Lint staged](https://github.com/okonet/lint-staged), which goal is to only run your lint scripts when necessary, and only on the necessary files.
 
 Now we need to change our pre-commit hook (in the `.husky/pre-commit` file):
+
+```bash
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+yarn lint-staged
+```
+
+## VSCode Setting
+
+If needed:
+
+```js
+// .vscode/settings.js
+{
+  "cSpell.words": ["Chakra"],
+  "editor.formatOnSave": true, // T
+  "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
+  "eslint.alwaysShowStatus": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // OR If want only typescript files to be formatted on save
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
+```
