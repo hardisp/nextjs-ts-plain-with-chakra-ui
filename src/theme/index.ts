@@ -10,6 +10,15 @@ import { Input, Checkbox } from './Input'
 
 const theme = extendTheme(
   {
+    global: {
+      'html, body': {
+        color: 'gray.600',
+        lineHeight: 'tall',
+      },
+      a: {
+        color: 'teal.500',
+      },
+    },
     colors: {
       brand: {
         100: '#f7fafc',
