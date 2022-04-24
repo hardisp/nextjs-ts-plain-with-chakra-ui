@@ -1,6 +1,7 @@
 // You can also use the more specific type for
 
 import { ComponentStyleConfig } from '@chakra-ui/react'
+import { mode } from '@chakra-ui/theme-tools'
 
 // a single part component: ComponentSingleStyleConfig
 export const Button: ComponentStyleConfig = {
@@ -30,6 +31,15 @@ export const Button: ComponentStyleConfig = {
   },
   // Two variants: outline and solid
   variants: {
+    primary: {
+      rounded: 'none',
+      bgColor: mode('brand.500', 'white'),
+    },
+    hardi: (props) => ({
+      rounded: 'none',
+      bgColor: mode('yellow.500', 'white')(props),
+      color: mode('white', 'gray.900')(props),
+    }),
     outline: {
       border: '2px solid',
       borderColor: 'hero.500',

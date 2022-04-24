@@ -9,6 +9,7 @@ import {
   Input,
   Select,
   Text,
+  useColorMode,
   VStack,
 } from '@chakra-ui/react'
 import { ResponsiveHeading } from '@components/ResponsiveHeading'
@@ -16,6 +17,7 @@ import { ResponsiveBox } from '@components/ResponsiveBox'
 import ResponsiveText from '@components/ResponsiveText/ResponsiveText'
 
 const Home: NextPage = () => {
+  const { toggleColorMode } = useColorMode()
   return (
     <Container maxW="container.lg" px="20" py="6">
       <Heading as="h1">Plain Layout Home Page</Heading>
@@ -43,10 +45,12 @@ const Home: NextPage = () => {
           </Select>
         </HStack>
         <HStack w="full">
-          <Checkbox /> <Text>I aggree with you</Text>
+          <Checkbox /> <Text>I agree with you</Text>
         </HStack>
 
-        <Button>Example</Button>
+        <Button variant={'hardi'} onClick={toggleColorMode}>
+          Example
+        </Button>
       </VStack>
     </Container>
   )
